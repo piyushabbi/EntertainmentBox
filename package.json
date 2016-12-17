@@ -1,0 +1,36 @@
+{
+  "name": "movies",
+  "version": "1.0.0",
+  "description": "A movies app on the tmdb api based out of react and es2015",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build",
+    "build": "webpack -d & copy \"src/index.html\" \"dist/index.html\" /Y & webpack-dev-server --content-base src/ --inline --hot --history-api-fallback",
+    "build:prod": "webpack -p & copy \"src/index.html\" \"dist/index.html\" /Y"
+  },
+  "keywords": [
+    "react",
+    "es2015",
+    "babel",
+    "movies",
+    "webpack"
+  ],
+  "author": "Piyush",
+  "license": "ISC",
+  "dependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.20.0",
+    "babel-loader": "^6.2.9",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-2": "^6.18.0",
+    "history": "^1.17.0",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "devDependencies": {
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-router": "^3.0.0"
+  }
+}
