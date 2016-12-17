@@ -3,11 +3,11 @@
 import React, { Component } from 'react';
 import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 'react-router';
 
-import Home from '../pages/Home';
-import Popular from '../pages/Popular';
-import Search from '../pages/Search';
-import About from '../pages/About';
-import NotFoundRoute from '../pages/NotFoundRoute';
+import {Home} from '../pages/Home';
+import {Popular} from '../pages/Popular';
+import {Search} from '../pages/Search';
+import {About} from '../pages/About';
+import {NotFoundRoute} from '../pages/NotFoundRoute';
 
 import Container from '../components/Container';
 
