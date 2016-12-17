@@ -23,6 +23,18 @@ var config = {
             test: /bootstrap.+\.(jsx|js)$/,
             exclude: SRC_DIR,
             loader: 'imports?jQuery=jquery,$=jquery,this=>window'
+        },
+        {
+            test: /\.css$/,
+            loader: 'style-loader!css-loader'
+        },
+        {
+            test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+            loader: 'file'
+        },
+        {
+            test: /\.(woff|woff2)$/,
+            loader: 'url?prefix=font/&limit=5000'
         }]
     }
 };

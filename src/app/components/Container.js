@@ -10,6 +10,7 @@ export default class Container extends Component {
     return(
       <div>
         <Header />
+        <hr />
         <div className="container">{this.props.children}</div>
       </div>
     );
