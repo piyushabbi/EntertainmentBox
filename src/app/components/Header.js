@@ -17,7 +17,7 @@ export default class Header extends React.Component {
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
               </button>
-              <Link className="navbar-brand" to='/'>EtMovies</Link>
+              <Link className="navbar-brand" to='/'>EtBox</Link>
             </div>
 
             <div id="navbar" className="navbar-collapse collapse" aria-expanded="false">
@@ -27,7 +27,7 @@ export default class Header extends React.Component {
                 <li><Link to='/about'>About</Link></li>
               </ul>
               <ul className="nav navbar-nav navbar-right">
-                <li className="active"><a href="./">Piyush <span className="sr-only">(current)</span></a></li>
+                <li className="active"><Link to='/'>Piyush <span className="sr-only">(current)</span></Link></li>
               </ul>
             </div>
 
