@@ -1,48 +1,56 @@
 'use strict';
 
 import React from 'react';
+import $ from 'jquery';
+import Styles from '../styles/styles.css';
 
 export default class PopularMovies extends React.Component {
 
-    render() {
+  constructor(props) {
+    super(props);
+    //this.thumbnailMouseOver = this.thumbnailMouseOver.bind(this);
+  }
 
-        const Styles = {
-            rowStyles: {
-                marginBottom: '10px'
-            },
-            detailsContainer: {
-                marginLeft: '10px'
-            },
-            overView: {
-                textAlign: 'justify',
-                fontSize: '13px'
-            }
-        };
+  _thumbnailMouseOver = (e) => {
+    $(e.target).find('.movie-thumbnail-title').removeClass('hide');
+  }
 
-        let movies = this.props.details.map( (m,i) => {
-            var posterUrl = 'http://image.tmdb.org/t/p/w185//' + m.poster_path;
+  _thumbnailMouseLeave = (e) => {
+    $(e.target).find('.movie-thumbnail-title').addClass('hide');
+  }
+  render() {
 
-            return (
-                <div key={ i } className="col-sm-6">
-                    <div className="col-xs-4" style={ Styles.rowStyles }>
-                        <img src={ posterUrl }  />
-                    </div>
-                    <div className="col-xs-8">
-                        <div style={ Styles.detailsContainer }>
-                            <h4>{ m.title }</h4>
+    const Styles = {
+      rowStyles: {
+        marginBottom: '10px'
+      }
+    };
 
-                        </div>
-                    </div>
-                </div>
-            );
-        });
+    let movies = this.props.details.map( (m,i) => {
 
-        return (
-            <section className="container">
-                <div className="row">
-                    { movies }
-                </div>
-            </section>
-        );
-    }
+      const posterUrl = 'http://image.tmdb.org/t/p/w185//' + m.poster_path,
+          altImage = m.title  + " Image",
+          movieTitle = m.title;
+
+      return (
+        <div key={ i } className="col-xs-12 col-sm-4 col-md-3">
+          <div onMouseOver={ this._thumbnailMouseOver.bind(this) }
+              onMouseLeave={ this._thumbnailMouseLeave.bind(this) } 
+              className="movie-thumbnail" style={ Styles.rowStyles }>
+            <img src={ posterUrl } alt= { altImage } width="280" height="400" />
+            <h3 className="movie-thumbnail-title hide">{ movieTitle }</h3>
+        </div>
+        </div>
+        
+      );
+    });
+
+    return (
+      <section className="container">
+        <div className="row">
+          { movies }
+        </div>
+      </section>
+    );
+  }
 }

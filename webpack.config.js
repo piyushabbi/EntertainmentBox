@@ -19,13 +19,14 @@ var config = {
             query: {
                 presets: ['react', 'es2015', 'stage-2']
             }
-        }, { 
+        }, {
             test: /bootstrap.+\.(jsx|js)$/,
             exclude: SRC_DIR,
             loader: 'imports?jQuery=jquery,$=jquery,this=>window'
         },
         {
             test: /\.css$/,
+            import: SRC_DIR,
             loader: 'style-loader!css-loader'
         },
         {

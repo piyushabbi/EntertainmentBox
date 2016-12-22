@@ -24,7 +24,7 @@ export class Popular extends React.Component {
       Promise.resolve(response.json()).then(response => {
           console.log(response);
           this.setState({
-              popularMovies: response.results
+            popularMovies: response.results
           });
       })
     })
